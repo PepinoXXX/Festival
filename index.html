@@ -1,3 +1,6 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A0A1A">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/sacramento@5/index.css">
 
 <style>
@@ -44,7 +47,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,26,.97
 .hero-pepino{font-family:'Armany';font-size:clamp(83px,20vw,150px);color:#fff;padding-bottom: 2rem;line-height:.92;animation:fadeUp .7s .15s ease both}
 .hero-xxx-row{display:flex;align-items:center;gap:12px;justify-content:center;margin:6px 0;animation:fadeUp .7s .28s ease both}
 .hero-line{height:1px;flex:1;max-width:90px;background:linear-gradient(90deg,transparent,#FF6EE7,transparent)}
-.hero-xxx{font-family:'Sacramento',cursive;font-size:80px;font-weight:300;letter-spacing:10px; animation : glow 3s ease-in-out infinite}
+.hero-xxx{font-family:'Sacramento',cursive;font-size:clamp(44px,15vw,80px);font-weight:300;letter-spacing:10px; animation : glow 3s ease-in-out infinite}
 .hero-festival{font-family:'Armany';font-size:clamp(34px,9vw,72px);color:#fff;line-height:1.1;animation:fadeUp .7s .4s ease both}
 .hero-sub{font-family:'Armany';font-size:15px;letter-spacing:4px;color:rgba(0,229,255,.7);text-transform:uppercase;margin-top:1.5rem;animation:fadeUp .7s .55s ease both}
 .hero-scroll{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:rgba(255,110,231,.4);font-size:20px;animation:bounce 2s ease infinite}
@@ -113,6 +116,89 @@ footer{background:#050510;padding:2rem 1.25rem;text-align:center;position:relati
 .ft-name{font-family:'Sacramento',cursive;font-size:36px;color:var(--sol);margin-bottom:3px;background:linear-gradient(90deg,#FF6EE7,#00E5FF);-webkit-background-clip:text}
 .ft-sub{font-size:10px;letter-spacing:3px;color:var(--sable);opacity: 50%;text-transform:uppercase}
 
+
+/* ── MOBILE OPTIMISATION ── */
+
+/* Nav : masquer les libellés longs sur petit écran */
+@media(max-width:600px){
+  .nav-links{gap:.4rem}
+  .nav-links a{font-size:8.5px;letter-spacing:.8px;padding:.4rem .1rem}
+  .nav-links strong{font-weight:600}
+}
+@media(max-width:420px){
+  nav{padding:.55rem .75rem}
+  .nav-logo{font-size:22px}
+  /* Remplace le texte des liens par emoji seulement sous 420px */
+  .nav-links a .nav-txt{display:none}
+  .nav-links a{font-size:18px;letter-spacing:0;padding:.4rem .3rem}
+}
+
+/* Hero */
+@media(max-width:600px){
+  #hero{padding:6rem 1.25rem 4rem}
+  .hero-badge{font-size:11px;letter-spacing:2px;padding:5px 14px;margin-bottom:1.25rem}
+  .hero-pepino{font-size:clamp(68px,22vw,120px);padding-bottom:1.25rem}
+  .hero-xxx{font-size:clamp(38px,12vw,60px);letter-spacing:6px}
+  .hero-sub{font-size:13px;letter-spacing:2.5px;margin-top:1.25rem}
+  .disco-ball{width:52px;height:52px;top:5%;right:4%}
+}
+
+/* Labels de section */
+@media(max-width:600px){
+  .s-label{font-size:13px;letter-spacing:2px}
+}
+
+/* Intro */
+@media(max-width:600px){
+  .intro-quote{font-size:clamp(26px,6vw,34px)}
+  .intro-body{font-size:16px;line-height:1.8}
+}
+
+/* Infos */
+@media(max-width:600px){
+  .ic-label{font-size:12px;letter-spacing:2px}
+  .ic-val{font-size:clamp(22px,5vw,28px)}
+  .ic-sub{font-size:13px}
+  .ic-icon{font-size:32px}
+}
+
+/* Programme */
+@media(max-width:600px){
+  .prog-title{font-size:clamp(34px,8vw,48px)}
+  .ptag{font-size:13px;padding:8px 16px}
+  .pd-head{font-size:12px;letter-spacing:1px;padding:.75rem 1rem}
+  .pd-body{padding:.875rem 1rem}
+  .pi-time{font-size:12px;min-width:46px}
+  .pi-text{font-size:15px;line-height:1.5}
+  .prog-overlay-icon{font-size:46px}
+  .prog-overlay-sub{font-size:14px;max-width:100%}
+}
+
+/* Transport */
+@media(max-width:600px){
+  .tr-title{font-size:clamp(34px,8vw,50px)}
+  .tr-body{font-size:16px;line-height:1.75}
+}
+
+/* RSVP */
+@media(max-width:600px){
+  #rsvp{padding:3.5rem 1.25rem}
+  .rsvp-title{font-size:clamp(46px,12vw,70px)}
+  .rsvp-sub{font-size:15px;line-height:1.7}
+  .fsub{font-size:13px;padding:1rem 1.5rem;width:100%;text-align:center;display:block;letter-spacing:1.5px}
+}
+
+/* Footer */
+@media(max-width:600px){
+  .ft-name{font-size:32px}
+  .ft-sub{font-size:11px;letter-spacing:2px}
+}
+
+/* Sections padding */
+@media(max-width:600px){
+  section{padding:3rem 1rem}
+}
+
 @media(max-width:380px){.eb{display:none}}
 </style>
 
@@ -121,10 +207,10 @@ footer{background:#050510;padding:2rem 1.25rem;text-align:center;position:relati
 <nav>
   <a href="#hero" class="nav-logo">Pépino XXX Festival</a>
   <ul class="nav-links">
-    <li><a href="#infos"><strong>🚨 Infos</strong></a></li>
-    <li><a href="#programme"><strong>🪩 Programme</strong></a></li>
-    <li><a href="#transport"><strong>🚄 Transport</strong></a></li>
-    <li><a href="#rsvp"><strong>🎟️ Obtenir mon pass</strong></a></li>
+    <li><a href="#infos"><strong>🚨 <span class="nav-txt">Infos</span></strong></a></li>
+    <li><a href="#programme"><strong>🪩 <span class="nav-txt">Programme</span></strong></a></li>
+    <li><a href="#transport"><strong>🚄 <span class="nav-txt">Transport</span></strong></a></li>
+    <li><a href="#rsvp"><strong>🎟️ <span class="nav-txt">Mon pass</span></strong></a></li>
   </ul>
 </nav>
 
